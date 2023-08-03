@@ -36,7 +36,7 @@ function inputCheck() {
 async function idPwCheck() {
   let count = 0;
   try {
-    const response = await tiger.get('http://localhost:3000/users');
+    const response = await tiger.get('/server/db/data.json/users');
     const userList = response.data;
     userList.forEach((item) => {
       if (id.value === item.name && pw.value === item.pw) {
@@ -58,7 +58,7 @@ async function idPwCheck() {
 }
 
 async function tokenPass() {
-  const response = await tiger.get('http://localhost:3000/users');
+  const response = await tiger.get('/server/db/data.json/users');
   const userList = response.data;
   userList.forEach((item) => {
     if (id.value === item.name) {
